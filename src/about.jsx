@@ -50,7 +50,7 @@ function About() {
                 <SectionTitle>╰┈➤ Internship</SectionTitle>
                 <div className="content-box">
                     <p>株式会社カチタス</p>
-                    <p>2023年11月 ~ Present</p>
+                    <p>2024年11月 ~ Present</p>
                     <p>In this internship, I worked as a software developer in the company.</p>
                     <p>I was responsible for the development of the company's website and the development of the company's software.</p>
                 </div>
