@@ -1,0 +1,97 @@
+.contact-container {
+    width: 100%;
+    padding: 3rem 1rem;
+    max-width: 800px;
+    margin: 0 auto;
+    min-height: calc(100vh - 100px);
+    display: flex;
+    align-items: center;
+}
+
+.contact-form {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 2.5rem;
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.contact-container h1 {
+    margin-bottom: 2rem;
+    font-size: 2.8rem;
+}
+
+.form-control {
+    width: 100%;
+    padding: 0.75rem;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.05);
+    color: #fff;
+    margin-bottom: 1rem;
+}
+
+.form-control:focus {
+    outline: none;
+    border-color: #4a9eff;
+    box-shadow: 0 0 0 2px rgba(74, 158, 255, 0.2);
+}
+
+.btn-primary {
+    padding: 0.75rem 2rem;
+    border-radius: 8px;
+    border: none;
+    background: #4a9eff;
+    color: white;
+    font-weight: 500;
+    margin-top: 1rem;
+}
+
+.btn-primary:hover {
+    background: #3b7fd4;
+}
+
+.status-message {
+    margin-top: 1rem;
+    text-align: center;
+    padding: 0.75rem;
+    border-radius: 8px;
+}
+
+.status-message.success {
+    background: rgba(75, 181, 67, 0.1);
+    color: #4bb543;
+}
+
+.status-message.error {
+    background: rgba(255, 76, 76, 0.1);
+    color: #ff4c4c;
+}
+
+.status-message.loading {
+    background: rgba(74, 158, 255, 0.1);
+    color: #4a9eff;
+}
+
+.form-submit {
+    text-align: center;
+    margin-top: 1.5rem;
+}
+
+.btn-primary:disabled {
+    background: #7f7f7f;
+    cursor: not-allowed;
+}
+
+button {
+    border: none;
+}
+
+h1 {
+    font-size: 2.8rem;
+    margin-bottom: 2rem;
+}

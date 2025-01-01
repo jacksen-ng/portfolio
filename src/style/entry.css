@@ -1,0 +1,72 @@
+/* Terminal Styles */
+.terminal-window {
+    position: fixed;
+    inset: 0;
+    background-color: #000000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+}
+
+.terminal-content {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 20px;
+    background-color: #000000;
+    border: 1px solid #ffffff;
+    border-radius: 12px;
+    padding: 20px;
+    font-family: 'Inter', Arial, sans-serif;
+    color: #ffffff;
+    box-shadow: 0 4px 20px rgba(255, 255, 255, 0.1);
+}
+
+.terminal-line {
+    margin: 8px 0;
+    white-space: pre-wrap;
+    line-height: 1.6;
+    font-size: 1.1rem;
+    color: #ffffff;
+}
+
+.terminal-cursor {
+    display: inline-block;
+    width: 8px;
+    height: 16px;
+    background-color: #ffffff;
+    margin-left: 4px;
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+/* Fade out animation for terminal */
+.terminal-window.fade-out {
+    animation: fadeOut 0.5s forwards;
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+/* Text typing animation */
+.typing {
+    overflow: hidden;
+    white-space: nowrap;
+    animation: typing 2s steps(40, end);
+}
+
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+}
