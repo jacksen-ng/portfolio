@@ -11,36 +11,39 @@ const TerminalEntry = ({ onLoadingComplete }) => {
     const [displayedText, setDisplayedText] = useState('');
 
     useEffect(() => {
-        if (!terminalLines || currentLine >= terminalLines.length) {
-            onLoadingComplete?.();
+        if (currentLine >= terminalLines.length) {
+            setTimeout(() => {
+                onLoadingComplete?.();
+            }, 1000);
             return;
         }
 
-        const typeCharacter = (index) => {
-            if (!terminalLines[currentLine]) return;
-            
-            if (index < terminalLines[currentLine].length) {
-                setDisplayedText(prev => prev + terminalLines[currentLine][index]);
-                setTimeout(() => typeCharacter(index + 1), 50);
+        let currentText = '';
+        let currentIndex = 0;
+
+        const typeInterval = setInterval(() => {
+            if (currentIndex < terminalLines[currentLine].length) {
+                currentText += terminalLines[currentLine][currentIndex];
+                setDisplayedText(currentText);
+                currentIndex++;
             } else {
+                clearInterval(typeInterval);
                 setTimeout(() => {
                     setCurrentLine(prev => prev + 1);
                     setDisplayedText('');
-                }, 500);
+                }, 1500);
             }
-        };
+        }, 100);
 
-        typeCharacter(0);
-    }, [terminalLines, currentLine, onLoadingComplete]);
+        return () => clearInterval(typeInterval);
+    }, [currentLine, terminalLines, onLoadingComplete]);
 
     return (
         <div className="terminal-window">
             <div className="terminal-content">
-                {terminalLines.map((line, index) => (
-                    <div key={index} className="terminal-line">{line}</div>
-                ))}
                 <div className="terminal-line">
                     {displayedText}
+                    <span className="terminal-cursor"></span>
                 </div>
             </div>
         </div>
