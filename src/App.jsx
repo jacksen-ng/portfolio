@@ -58,7 +58,7 @@ function AppContent() {
 
 function App() {
     return (
-        <BrowserRouter basename="/portfolio">
+        <BrowserRouter>
             <AppContent />
         </BrowserRouter>
     );
