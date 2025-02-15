@@ -34,7 +34,7 @@ const Home = () => {
                         <nav className="home-navigation">
                             <Link to="/about" className="nav-item">About</Link>
                             <Link to="/project" className="nav-item">Projects</Link>
-                            <Link to="/contact" className="nav-item">Contact</Link>
+                            <Link to="/experience" className="nav-item">Experience</Link>
                         </nav>
                     </div>
                 </div>

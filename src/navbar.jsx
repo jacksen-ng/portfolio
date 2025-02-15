@@ -33,7 +33,7 @@ const Navigation = () => {
                         <Link to="/" className="nav-link" onClick={handleLinkClick}>Home</Link>
                         <Link to="/about" className="nav-link" onClick={handleLinkClick}>About</Link>
                         <Link to="/project" className="nav-link" onClick={handleLinkClick}>Projects</Link>
-                        <Link to="/contact" className="nav-link" onClick={handleLinkClick}>Contact</Link>
+                        <Link to="/experience" className="nav-link" onClick={handleLinkClick}>Experience</Link>
                     </div>
                 </div>
             </nav>

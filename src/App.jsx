@@ -7,7 +7,7 @@ import Home from './home.jsx';
 import About from './about.jsx';
 import Project from './project.jsx';
 import Footer from './footer.jsx';
-import Contact from './contact.jsx';
+import Experience from './Experience.jsx';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 function AppContent() {
@@ -46,7 +46,7 @@ function AppContent() {
                             <Route path="/" element={<Home />} />
                             <Route path="/about" element={<About />} />
                             <Route path="/project" element={<Project />} />
-                            <Route path="/contact" element={<Contact />} />
+                            <Route path="/experience" element={<Experience />} />
                         </Routes>
                     </div>
                     <Footer />
