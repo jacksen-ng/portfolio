@@ -9,6 +9,7 @@ import Project from './project.jsx';
 import Footer from './footer.jsx';
 import Experience from './Experience.jsx';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { LanguageProvider } from './contexts/LanguageContext';
 
 function AppContent() {
     const [isLoading, setIsLoading] = useState(true);
@@ -59,7 +60,9 @@ function AppContent() {
 function App() {
     return (
         <BrowserRouter>
-            <AppContent />
+            <LanguageProvider>
+                <AppContent />
+            </LanguageProvider>
         </BrowserRouter>
     );
 }

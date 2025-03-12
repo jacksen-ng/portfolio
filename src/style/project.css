@@ -63,6 +63,10 @@
     background: rgba(255, 255, 255, 0.2);
 }
 
+.link-icon {
+    font-size: 1.2rem;
+}
+
 @keyframes slideUp {
     from {
         opacity: 0;
@@ -71,5 +75,69 @@
     to {
         opacity: 1;
         transform: translateY(0);
+    }
+}
+
+.tech-stack {
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.tech-stack h3 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.tech-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+}
+
+.tech-tag {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.6rem 1rem;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+    color: #ffffff;
+    border-radius: 0.8rem;
+    transition: all 0.3s ease;
+    gap: 0.6rem;
+}
+
+.tech-tag:hover {
+    transform: translateY(-3px);
+    background: rgba(255, 255, 255, 0.12);
+    border-color: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.tech-icon {
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+.tech-label {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+@media (max-width: 768px) {
+    .tech-tag {
+        padding: 0.5rem 0.8rem;
+    }
+    
+    .tech-icon {
+        width: 1.2rem;
+        height: 1.2rem;
+    }
+    
+    .tech-label {
+        font-size: 0.8rem;
     }
 }

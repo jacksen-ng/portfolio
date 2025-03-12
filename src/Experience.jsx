@@ -2,70 +2,70 @@ import React from 'react';
 import { SiGithub } from 'react-icons/si';
 import { HiExternalLink } from 'react-icons/hi';
 import './style/experience.css';
+import { useTranslation } from './hooks/useTranslation';
 
 const SectionTitle = ({ children }) => (
     <h1 className="section-title">{children}</h1>
 );
 
 function Experience() {
+    const { t } = useTranslation();
+    
     return (
         <div className="experience-container">
             <section className="education-section">
-                <SectionTitle>Education 🎓</SectionTitle>
+                <SectionTitle>{t('experience.educationTitle')}</SectionTitle>
                 <div className="content-box">
                     <div className="education-item">
-                        <h3>Musashino University</h3>
+                        <h3>{t('experience.musashino')}</h3>
                         <span className="date">2023.4 ~ Present</span>
-                        <p>Data Science</p>
+                        <p>{t('experience.dataScience')}</p>
                     </div>
                     
                     <div className="education-item">
-                        <h3>Meros Language School</h3>
+                        <h3>{t('experience.meros')}</h3>
                         <span className="date">2021.10 ~ 2023.3</span>
-                        <p>Japanese Language</p>
+                        <p>{t('experience.japanese')}</p>
                     </div>
 
                     <div className="education-item">
-                        <h3>Chinese High School</h3>
+                        <h3>{t('experience.chineseHighSchool')}</h3>
                         <span className="date">2018.1 ~ 2020.12</span>
                     </div>
                 </div>
             </section>
 
             <section className="internship-section">
-                <SectionTitle>Internship Experience 💼</SectionTitle>
+                <SectionTitle>{t('experience.internshipTitle')}</SectionTitle>
                 <div className="content-box">
                     <h3>株式会社カチタス</h3>
                     <span className="date">2024.11 ~ Present</span>
                     <p>
-                        Working on website development using React.js, FastAPI, and PostgreSQL.
-                        Focused on building modern web applications and improving user experience.
+                        {t('experience.internshipText')}
                     </p>
                 </div>
             </section>
 
             <section className="activity-section">
-                <SectionTitle>Activities 🚀</SectionTitle>
+                <SectionTitle>{t('experience.activitiesTitle')}</SectionTitle>
                 <div className="content-box">
-                    <h3>Zenn-Hackathon</h3>
+                    <h3>{t('experience.zennHackathon')}</h3>
                     <span className="date">2024.12.19 ~ 2025.2.10</span>
                     <p>
-                        Led a team project focusing on note summarization using the Gemini API.
-                        Developed a full-stack application with React.js, FastAPI, and PostgreSQL.
+                        {t('experience.zennText')}
                     </p>
                     <div className="links-container">
                         <a href="https://github.com/jacksen-ng/zenn-hackathon" target="_blank" rel="noopener noreferrer">
-                            <SiGithub /> View Project
+                            <SiGithub /> {t('experience.viewProject')}
                         </a>
                     </div>
                 </div>
 
                 <div className="content-box">
-                    <h3>Intage Research Development Competition</h3>
+                    <h3>{t('experience.intageTitle')}</h3>
                     <span className="date">2024.12.4</span>
                     <p>
-                        Research project on Basketball tactics using LLM technology.
-                        Developed innovative 3DCG simulation presentation methods.
+                        {t('experience.intageText')}
                     </p>
                     <div className="slides-preview">
                         <iframe
@@ -89,7 +89,7 @@ function Experience() {
                                 rel="noopener noreferrer"
                                 className="slides-link"
                             >
-                                <span>View Presentation</span>
+                                <span>{t('experience.viewPresentation')}</span>
                                 <HiExternalLink />
                             </a>
                         </div>
@@ -97,10 +97,10 @@ function Experience() {
                 </div>
 
                 <div className="content-box">
-                    <h3>FIT 2024 情報科学技術フォーラム</h3>
+                    <h3>{t('experience.fitTitle')}</h3>
                     <span className="date">2024.9.4 ~ 2024.9.6</span>
                     <p>
-                        Presented research on Basketball tactics using LLM at the 23rd Information Technology Forum.
+                        {t('experience.fitText')}
                     </p>
 
                     <a
@@ -110,26 +110,26 @@ function Experience() {
                             className="pdf-link"
                         >
                             <i className="fa-solid fa-file-pdf"></i>
-                            View PDF
+                            {t('projects.viewPDF')}
                     </a>
                 </div>
             </section>
 
             <section className="scholarship-section">
-                <SectionTitle>Scholarships & Awards 🏆</SectionTitle>
+                <SectionTitle>{t('experience.scholarshipTitle')}</SectionTitle>
                 <div className="content-box">
                     <div className="scholarship-item">
-                        <h3>Nitori Scholarship</h3>
+                        <h3>{t('experience.nitoriScholarship')}</h3>
                         <span className="date">2024.10 ~ 2025.9</span>
                     </div>
 
                     <div className="scholarship-item">
-                        <h3>JASSO Scholarship</h3>
+                        <h3>{t('experience.jassoScholarship')}</h3>
                         <span className="date">2023.4 ~ 2024.3</span>
                     </div>
 
                     <div className="scholarship-item">
-                        <h3>LSH Asia Scholarship</h3>
+                        <h3>{t('experience.lshScholarship')}</h3>
                         <span className="date">2022.8 ~ 2022.12</span>
                     </div>
                 </div>

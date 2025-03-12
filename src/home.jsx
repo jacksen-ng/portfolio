@@ -1,5 +1,6 @@
 import React, { Suspense } from 'react';
 import { Link } from 'react-router-dom';
+import { useTranslation } from './hooks/useTranslation';
 
 const PROFILE_IMAGE_URL = "https://lh3.googleusercontent.com/d/1YlPOcE3eYV-e-2MveBVKp-ogqzFY_LWk";
 
@@ -8,7 +9,7 @@ const LazyProfileImage = () => {
         <Suspense fallback={<div className="loading-placeholder">Loading...</div>}>
             <img 
                 src={PROFILE_IMAGE_URL} 
-                alt="jacksen" 
+                alt="[name]" 
                 loading="lazy"
                 className="profile-image"
             />
@@ -17,6 +18,8 @@ const LazyProfileImage = () => {
 };
 
 const Home = () => {
+    const { t } = useTranslation();
+    
     return (
         <div className="content">
             <main className="home-container">
@@ -26,15 +29,15 @@ const Home = () => {
                             <LazyProfileImage />
                         </div>
                         <div className="profile-info">
-                            <h1>Hello, I'm JackSen Ng</h1>
-                            <p>Student of Data Science in Musashino University, Japan</p>
+                            <h1>{t('home.greeting').replace('[name]', 'JackSen Ng')}</h1>
+                            <p>{t('home.title')}</p>
                         </div>
                     </div>
                     <div className="right-section">
                         <nav className="home-navigation">
-                            <Link to="/about" className="nav-item">About</Link>
-                            <Link to="/project" className="nav-item">Projects</Link>
-                            <Link to="/experience" className="nav-item">Experience</Link>
+                            <Link to="/about" className="nav-item">{t('nav.about')}</Link>
+                            <Link to="/project" className="nav-item">{t('nav.projects')}</Link>
+                            <Link to="/experience" className="nav-item">{t('nav.experience')}</Link>
                         </nav>
                     </div>
                 </div>

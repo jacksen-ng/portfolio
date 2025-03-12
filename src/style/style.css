@@ -276,8 +276,39 @@ body {
         -2px -2px 4px rgba(65, 105, 225, 0.1);
 }
 
+/* Navigation Actions */
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+/* Language Switcher */
+.language-switcher {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #ffffff;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+}
+
+.language-switcher:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+}
+
 /* Media Queries */
 @media (max-width: 768px) {
+    .language-switcher {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.8rem;
+    }
+    
     .nav-link {
         font-size: 1.25rem;
     }
