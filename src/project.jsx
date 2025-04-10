@@ -145,6 +145,18 @@ function Project() {
                             <TechTag icon={SiGooglecloud} label="Google Cloud" color="#4285F4" />
                         </div>
                     </div>
+
+                    <div className="links-container">
+                        <a
+                            href="https://jacksen-blog.vercel.app/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="link-button"
+                        >
+                            <FaLink className="link-icon" />
+                            {t('projects.viewWebsite')}
+                        </a>
+                    </div>
                 </div>
             </section>
         </div>

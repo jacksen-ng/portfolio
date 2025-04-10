@@ -42,7 +42,7 @@ const ja = {
         project3Text2: "tensorflowを使用してディープラーニングモデルを作成しました。また、FastAPIを使用して果物分類のAPIを作成しました。",
         project4Title: "プロジェクト4：ブログ",
         project4Text1: "このプロジェクトはNext.jsとTailwind CSSを使用したブログです。",
-        project4Text2: "Google Compute Engineでホスティングしています。",
+        project4Text2: "Vercelでホスティングしています。",
         viewOnGithub: "Githubで見る",
         viewPDF: "PDFを見る",
         viewWebsite: "ウェブサイトで見る",
