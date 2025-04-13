@@ -79,7 +79,6 @@ function Project() {
                     <p>{t('projects.project2Text1')}</p>
                     <p>{t('projects.project2Text2')}</p>
                     
-                    {/* 添加技术栈标签 */}
                     <div className="tech-stack">
                         <h3>{t('projects.techStackTitle')}</h3>
                         <div className="tech-tags">
@@ -148,7 +147,7 @@ function Project() {
 
                     <div className="links-container">
                         <a
-                            href="https://jacksen-blog.vercel.app/"
+                            href="https://www.jacksen-blog.com/"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="link-button"
