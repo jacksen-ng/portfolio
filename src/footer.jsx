@@ -34,6 +34,19 @@ const Footer = () => {
                         <i className="fa-solid fa-envelope"></i>
                         Email
                     </a>
+
+                    <span className="separator">•</span>
+
+                    <a 
+                        href="https://www.jacksen-blog.com/" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="instagram-link"
+                    >
+                        <i className="fa-solid fa-blog"></i>
+                        Blog
+                    </a>
+
                 </div>
                 <p>© {currentYear} JackSen Ng. All rights reserved.</p>
             </div>
