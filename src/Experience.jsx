@@ -69,7 +69,7 @@ function Experience() {
                     </p>
                     <div className="slides-preview">
                         <iframe
-                            src="https://docs.google.com/presentation/d/15LKmcz6zRrNkiRYhqE9i8gYQXLAwKvnuTZ73Bv2qx4c/edit?usp=sharing"
+                            src="https://docs.google.com/presentation/d/15LKmcz6zRrNkiRYhqE9i8gYQXLAwKvnuTZ73Bv2qx4c/embed?start=false&loop=false&delayms=3000"
                             frameBorder="0"
                             width="100%"
                             height="400"
@@ -84,7 +84,7 @@ function Experience() {
                         
                         <div className="backup-link">
                             <a 
-                                href="https://docs.google.com/presentation/d/15LKmcz6zRrNkiRYhqE9i8gYQXLAwKvnuTZ73Bv2qx4c/edit?usp=sharing" 
+                                href="https://docs.google.com/presentation/d/15LKmcz6zRrNkiRYhqE9i8gYQXLAwKvnuTZ73Bv2qx4c/view" 
                                 target="_blank" 
                                 rel="noopener noreferrer"
                                 className="slides-link"
