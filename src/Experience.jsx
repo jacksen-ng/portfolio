@@ -46,8 +46,27 @@ function Experience() {
                 </div>
             </section>
 
-            <section className="activity-section">
+            <section className="hackathon-section">
                 <SectionTitle>{t('experience.activitiesTitle')}</SectionTitle>
+                <div className="content-box">
+                    <h3>{t('experience.geekHackathon')}</h3>
+                    <span className="prize">{t('experience.geekPrize')}</span>
+                    <span className="date">{t('experience.geekPeriod')}</span>
+                    <p>{t('experience.geekText')}</p>
+                    <div className="hackathon-details">
+                        <ul>
+                            {t('experience.geekDetail').split('\n').map((item, index) => (
+                                <li key={index}>{item.replace('- ', '')}</li>
+                            ))}
+                        </ul>
+                    </div>
+                    <div className="links-container">
+                        <a href="https://github.com/jacksen-ng/camp-06" target="_blank" rel="noopener noreferrer">
+                            <SiGithub /> {t('experience.viewProject')}
+                        </a>
+                    </div>
+                </div>
+
                 <div className="content-box">
                     <h3>{t('experience.zennHackathon')}</h3>
                     <span className="date">2024.12.19 ~ 2025.2.10</span>
