@@ -1,5 +1,5 @@
 import React from 'react';
-import { SiGithub } from 'react-icons/si';
+import { SiGithub, SiPython, SiTypescript, SiReact, SiFastapi, SiPostgresql, SiTailwindcss, SiDocker, SiGooglecloud, SiSqlite } from 'react-icons/si';
 import { HiExternalLink } from 'react-icons/hi';
 import './style/experience.css';
 import { useTranslation } from './hooks/useTranslation';
@@ -8,8 +8,99 @@ const SectionTitle = ({ children }) => (
     <h1 className="section-title">{children}</h1>
 );
 
+const TechTag = ({ icon: Icon, label, color }) => {
+    return (
+        <div className="tech-tag" title={label}>
+            {Icon && <Icon className="tech-icon" style={{ color: color }} />}
+            <span className="tech-label">{label}</span>
+        </div>
+    );
+};
+
 function Experience() {
     const { t } = useTranslation();
+    
+    const internships = [
+        {
+            companyKey: 'experience.internshipKatitasName',
+            date: '2024.11 ~ Present',
+            descriptionKey: 'experience.internshipText',
+            techs: [
+                { icon: SiPython, label: "Python", color: "#3776AB" },
+                { icon: SiTypescript, label: "TypeScript", color: "#3178C6" },
+                { icon: SiReact, label: "React", color: "#61DAFB" },
+                { icon: SiFastapi, label: "FastAPI", color: "#00599C" },
+                { icon: SiPostgresql, label: "PostgreSQL", color: "#336791" },
+                { icon: SiTailwindcss, label: "Tailwind CSS", color: "#38BDF8" },
+                { icon: SiDocker, label: "Docker", color: "#2496ED" },
+            ]
+        },
+        {
+            companyKey: 'experience.internshipGenieeName',
+            date: '2025.7.26',
+            descriptionKey: 'experience.internshipText2',
+            prizeKey: 'experience.internshipGenieePrize',
+            techs: [
+                { icon: SiPython, label: "Python", color: "#3776AB" },
+                { icon: SiTypescript, label: "TypeScript", color: "#3178C6" },
+                { icon: SiReact, label: "React", color: "#61DAFB" },
+                { icon: SiFastapi, label: "FastAPI", color: "#00599C" },
+                { icon: SiSqlite, label: "SQLite", color: "#003B57" },
+            ]
+        }
+    ];
+
+    const activities = [
+        {
+            titleKey: "experience.shiftAgentTitle",
+            date: "2024.7",
+            descriptionKey: "experience.shiftAgentText",
+            detailsKey: "experience.shiftAgentDetail",
+            links: [
+                { url: "https://github.com/jacksen-ng/shift-agent", textKey: "experience.viewProject", icon: SiGithub },
+                { url: "https://zenn.dev/jacksen/articles/47e7c8e451669a", textKey: "experience.viewArticle", icon: HiExternalLink },
+            ],
+            techs: [
+                { icon: SiPython, label: "Python", color: "#3776AB" },
+                { icon: SiTypescript, label: "TypeScript", color: "#3178C6" },
+                { icon: SiReact, label: "React", color: "#61DAFB" },
+                { label: "LangChain", color: "#83B273" },
+                { icon: SiFastapi, label: "FastAPI", color: "#00599C" },
+                { icon: SiGooglecloud, label: "Google Cloud", color: "#4285F4" },
+            ]
+        },
+        {
+            titleKey: "experience.geekHackathon",
+            prizeKey: "experience.geekPrize",
+            dateKey: "experience.geekPeriod",
+            descriptionKey: "experience.geekText",
+            detailsKey: "experience.geekDetail",
+            links: [
+                { url: "https://github.com/jacksen-ng/camp-06", textKey: "experience.viewProject", icon: SiGithub }
+            ],
+        },
+        {
+            titleKey: "experience.zennHackathon",
+            date: "2024.12.19 ~ 2025.2.10",
+            descriptionKey: "experience.zennText",
+            links: [
+                { url: "https://github.com/jacksen-ng/zenn-hackathon", textKey: "experience.viewProject", icon: SiGithub }
+            ],
+        },
+        {
+            titleKey: "experience.intageTitle",
+            date: "2024.12.4",
+            descriptionKey: "experience.intageText",
+            isPresentation: true,
+            presentationUrl: "https://docs.google.com/presentation/d/15LKmcz6zRrNkiRYhqE9i8gYQXLAwKvnuTZ73Bv2qx4c",
+        },
+        {
+            titleKey: "experience.fitTitle",
+            date: "2024.9.4 ~ 2024.9.6",
+            descriptionKey: "experience.fitText",
+            pdfUrl: "https://drive.google.com/file/d/1ZVXaN0PegYY0Ib0p5prKOCEz_gcVPcJY/view?usp=sharing",
+        }
+    ];
     
     return (
         <div className="experience-container">
@@ -37,101 +128,94 @@ function Experience() {
 
             <section className="internship-section">
                 <SectionTitle>{t('experience.internshipTitle')}</SectionTitle>
-                <div className="content-box">
-                    <h3>株式会社カチタス</h3>
-                    <span className="date">2024.11 ~ Present</span>
-                    <p>
-                        {t('experience.internshipText')}
-                    </p>
-                </div>
+                {internships.map((internship, index) => (
+                    <div className="content-box" key={index}>
+                        <h3>{t(internship.companyKey)}</h3>
+                        {internship.prizeKey && <span className="prize">{t(internship.prizeKey)}</span>}
+                        <span className="date">{internship.date}</span>
+                        <p>概要：{t(internship.descriptionKey)}</p>
+                        <div className="tech-tags-container" style={{ marginTop: '1rem' }}>
+                            <span style={{ marginRight: '0.5rem' }}>{t('experience.techUsed')}:</span>
+                            {internship.techs.map(tech => (
+                                <TechTag key={tech.label} icon={tech.icon} label={tech.label} color={tech.color} />
+                            ))}
+                        </div>
+                    </div>
+                ))}
             </section>
+
 
             <section className="hackathon-section">
                 <SectionTitle>{t('experience.activitiesTitle')}</SectionTitle>
-                <div className="content-box">
-                    <h3>{t('experience.geekHackathon')}</h3>
-                    <span className="prize">{t('experience.geekPrize')}</span>
-                    <span className="date">{t('experience.geekPeriod')}</span>
-                    <p>{t('experience.geekText')}</p>
-                    <div className="hackathon-details">
-                        <ul>
-                            {t('experience.geekDetail').split('\n').map((item, index) => (
-                                <li key={index}>{item.replace('- ', '')}</li>
-                            ))}
-                        </ul>
-                    </div>
-                    <div className="links-container">
-                        <a href="https://github.com/jacksen-ng/camp-06" target="_blank" rel="noopener noreferrer">
-                            <SiGithub /> {t('experience.viewProject')}
-                        </a>
-                    </div>
-                </div>
-
-                <div className="content-box">
-                    <h3>{t('experience.zennHackathon')}</h3>
-                    <span className="date">2024.12.19 ~ 2025.2.10</span>
-                    <p>
-                        {t('experience.zennText')}
-                    </p>
-                    <div className="links-container">
-                        <a href="https://github.com/jacksen-ng/zenn-hackathon" target="_blank" rel="noopener noreferrer">
-                            <SiGithub /> {t('experience.viewProject')}
-                        </a>
-                    </div>
-                </div>
-
-                <div className="content-box">
-                    <h3>{t('experience.intageTitle')}</h3>
-                    <span className="date">2024.12.4</span>
-                    <p>
-                        {t('experience.intageText')}
-                    </p>
-                    <div className="slides-preview">
-                        <iframe
-                            src="https://docs.google.com/presentation/d/15LKmcz6zRrNkiRYhqE9i8gYQXLAwKvnuTZ73Bv2qx4c/embed?start=false&loop=false&delayms=3000"
-                            frameBorder="0"
-                            width="100%"
-                            height="400"
-                            allowFullScreen={true}
-                            loading="lazy"
-                            title="Research Presentation Slides"
-                            onError={(e) => {
-                                e.target.style.display = 'none';
-                                document.querySelector('.backup-link').style.display = 'block';
-                            }}
-                        ></iframe>
+                {activities.map((activity, index) => (
+                    <div className="content-box" key={index}>
+                        <h3>{t(activity.titleKey)}</h3>
+                        {activity.prizeKey && <span className="prize">{t(activity.prizeKey)}</span>}
+                        <span className="date">{activity.date || t(activity.dateKey)}</span>
                         
-                        <div className="backup-link">
-                            <a 
-                                href="https://docs.google.com/presentation/d/15LKmcz6zRrNkiRYhqE9i8gYQXLAwKvnuTZ73Bv2qx4c/view" 
-                                target="_blank" 
+                        <p>{t(activity.descriptionKey)}</p>
+
+                        {activity.detailsKey && (
+                             <div className="hackathon-details">
+                                <ul>
+                                    {t(activity.detailsKey).split('\n').map((item, idx) => (
+                                        <li key={idx}>{item.replace('- ', '')}</li>
+                                    ))}
+                                </ul>
+                            </div>
+                        )}
+
+                        {activity.techs && activity.techs.length > 0 && (
+                            <div className="tech-tags-container" style={{ marginTop: '1rem' }}>
+                                {activity.techs.map(tech => (
+                                    <TechTag key={tech.label} icon={tech.icon} label={tech.label} color={tech.color} />
+                                ))}
+                            </div>
+                        )}
+
+                        {activity.links && activity.links.length > 0 && (
+                            <div className="links-container">
+                                {activity.links.map((link, linkIndex) => (
+                                    <a key={linkIndex} href={link.url} target="_blank" rel="noopener noreferrer">
+                                        {link.icon && <link.icon />} {t(link.textKey)}
+                                    </a>
+                                ))}
+                            </div>
+                        )}
+
+                        {activity.isPresentation && (
+                            <div className="slides-preview">
+                                <iframe
+                                    src={`${activity.presentationUrl}/embed?start=false&loop=false&delayms=3000`}
+                                    frameBorder="0"
+                                    width="100%"
+                                    height="400"
+                                    allowFullScreen={true}
+                                    loading="lazy"
+                                    title="Research Presentation Slides"
+                                ></iframe>
+                                <div className="backup-link" style={{display: 'none'}}>
+                                     <a href={activity.presentationUrl} target="_blank" rel="noopener noreferrer" className="slides-link">
+                                         <span>{t('experience.viewPresentation')}</span>
+                                         <HiExternalLink />
+                                     </a>
+                                </div>
+                            </div>
+                        )}
+
+                        {activity.pdfUrl && (
+                             <a
+                                href={activity.pdfUrl}
+                                target="_blank"
                                 rel="noopener noreferrer"
-                                className="slides-link"
+                                className="pdf-link"
                             >
-                                <span>{t('experience.viewPresentation')}</span>
-                                <HiExternalLink />
+                                <i className="fa-solid fa-file-pdf"></i>
+                                {t('projects.viewPDF')}
                             </a>
-                        </div>
+                        )}
                     </div>
-                </div>
-
-                <div className="content-box">
-                    <h3>{t('experience.fitTitle')}</h3>
-                    <span className="date">2024.9.4 ~ 2024.9.6</span>
-                    <p>
-                        {t('experience.fitText')}
-                    </p>
-
-                    <a
-                            href="https://drive.google.com/file/d/1ZVXaN0PegYY0Ib0p5prKOCEz_gcVPcJY/view?usp=sharing"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="pdf-link"
-                        >
-                            <i className="fa-solid fa-file-pdf"></i>
-                            {t('projects.viewPDF')}
-                    </a>
-                </div>
+                ))}
             </section>
 
             <section className="scholarship-section">
